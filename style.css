@@ -1,0 +1,27 @@
+body{
+    margin: 0;
+}
+#xxx{
+    background: gray;
+    display: block;
+}
+.action{
+    position: fixed;
+    bottom: 0;
+    left: 8px;;
+}
+/*画笔默认不出现*/
+.action > #brush{
+    display: none;  
+}
+
+
+/*如果action是x状态那brush（画笔）就出现*/
+.action.x > #brush{
+    display: inline-block;
+}
+
+/*如果action是x状态那eraser（橡皮擦）就不出现*/
+.action.x > #eraser{
+    display: none;
+}
