@@ -1,27 +1,86 @@
+ul,ol{list-style: none;}
+*{margin: 0;padding: 0;}
 body{
-    margin: 0;
+    overflow: hidden;
 }
 #xxx{
-    background: gray;
     display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
 }
 .action{
     position: fixed;
-    bottom: 0;
-    left: 8px;;
-}
-/*画笔默认不出现*/
-.action > #brush{
-    display: none;  
+    left: 0;
+    top:0;
+    padding: 20px;
 }
 
+.icon {
+    width: 1em; height: 1em;
+    vertical-align: -0.15em;
+    fill: currentColor;
+    overflow: hidden;
+ }
 
-/*如果action是x状态那brush（画笔）就出现*/
-.action.x > #brush{
-    display: inline-block;
-}
+ .action svg{
+    width: 1.5em;
+    height: 1.5em;
+    transition: all 0.3s;
+    margin: 0 10px;
+ }
 
-/*如果action是x状态那eraser（橡皮擦）就不出现*/
-.action.x > #eraser{
-    display: none;
-}
+ .action svg.active{
+    fill: red;
+    transform: scale(1.2);
+ }
+ 
+ .colors{
+    position: fixed;
+    top: 60px;
+    left: 28px;
+ }
+
+ .colors>li{
+    width: 20px;
+    height: 20px;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.25);
+    margin: 10px 0;
+    border-radius: 50%;
+    transition: all 0.3s;
+ }
+
+ .colors>li.red{
+    background: red;
+ }
+ .colors>li.green{
+     background: green;
+ }
+ .colors>li.blue{
+     background: blue ;
+ }
+ .colors>li.active{
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.95);
+    transform: scale(1.2);
+ }
+ .sizes{
+    position: fixed;
+    right: 20px;
+    top: 10px;
+ }
+
+ .sizes>li{
+    margin: 20px 0;
+ }
+
+ .sizes> .thin{
+    height: 0;
+    width: 20px;
+    border-top: 3px solid black;
+ }
+
+ .sizes> .thick{
+    height: 0;
+    width: 20px;
+    border-top: 6px solid black;
+ }
